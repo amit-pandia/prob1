@@ -69,12 +69,12 @@ func main() {
 			_, ok := t.ignoredShops[r.idx]
 			if !ok {
 				t.result += r.roseCount
-			}
-			if r.idx < len(t.rosesPerShop)-1 {
-				t.ignoredShops[r.idx+1] = r.idx + 1
-			}
-			if r.idx > 0 {
-				t.ignoredShops[r.idx-1] = r.idx - 1
+				if r.idx < len(t.rosesPerShop)-1 {
+					t.ignoredShops[r.idx+1] = r.idx + 1
+				}
+				if r.idx > 0 {
+					t.ignoredShops[r.idx-1] = r.idx - 1
+				}
 			}
 		}
 		tw.testData[tIdx] = t
